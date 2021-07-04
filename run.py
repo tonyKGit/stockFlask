@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def index():
     res = requests.get("https://isin.twse.com.tw/isin/C_public.jsp?strMode=2")
     df = pd.read_html(res.text)[0]
