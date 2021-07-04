@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import requests
 import pandas as pd
 
@@ -10,8 +10,7 @@ def index():
     df = pd.read_html(res.text)[0]
     df.columns = df.iloc[0]
     number = df.loc[df['有價證券代號及名稱']=='上市認購(售)權證'].index[0]
-    number
     df = df.iloc[2:number]
     df = df['有價證券代號及名稱'].str.split('　').str.get(0).str.split(' ').str.get(0)
     response = df.to_json(orient='values')
-    return response
+    return '123'
