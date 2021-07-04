@@ -13,4 +13,4 @@ def index():
     df = df.iloc[2:number]
     df = df['有價證券代號及名稱'].str.split('　').str.get(0).str.split(' ').str.get(0)
     response = df.to_json(orient='values')
-    return '123'
+    return response
