@@ -3,3 +3,5 @@ gunicorn
 requests
 pandas
 lxml
+shioaji
+flask_script
